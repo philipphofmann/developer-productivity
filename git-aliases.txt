@@ -1,0 +1,29 @@
+[alias]
+    l = log --pretty=oneline --abbrev-commit --graph --decorate
+    ls = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate
+    ll = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --numstat
+    ld = log --pretty=format:"%C(yellow)%h\\ %ad%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --date=relative
+    lda = log --pretty=format:"%C(yellow)%h\\ %ad%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --date=local
+    a = add -A .
+    s = status
+    c = commit -m
+    ca = commit -a --amend
+    cp = cherry-pick
+    p = push
+    pf = push -f
+    ph = push -u origin HEAD
+    co = checkout
+    cob = checkout -b
+    cop = checkout -
+    cl = branch --merged '!ls'
+    pl = pull
+    plr = pull --rebase
+    b = branch
+    bd = branch -D
+    m = merge --no-ff
+    mm = !git co main && git pull && git cop && git m main
+    r = reset --hard
+    su = submodule update
+    si = submodule init
+    st = stash
+    stp = stash pop
