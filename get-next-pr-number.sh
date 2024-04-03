@@ -1,9 +1,9 @@
 #!/bin/bash
 
-LAST_PR_JSON=$(gh pr list --limit 1 --json number)
+LAST_PR_JSON=$(gh pr list -s all --limit 1 --json number)
 LAST_PR=$(echo $LAST_PR_JSON | grep -o '"number":[0-9]*' | awk -F ':' '{print $2}')
 
-LAST_ISSUE_JSON=$(gh issue list --limit 1 --json number)
+LAST_ISSUE_JSON=$(gh issue list -s all --limit 1 --json number)
 LAST_ISSUE=$(echo $LAST_ISSUE_JSON | grep -o '"number":[0-9]*' | awk -F ':' '{print $2}')
 
 NEXT_PR_NUMBER=0
