@@ -12,3 +12,5 @@ alias next-pr-number='~/git-repos/developer-productivity/get-next-pr-number.sh'
 alias mypy-edited='git diff --name-only --cached | grep '\.py' | xargs -r mypy'
 
 alias vc-bash-profiles="code  ~/.profile ~/.bash_profile ~/.bashrc ~/.zshrc ~/.zprofile"
+
+alias git-clean-branches="git fetch -p --tags -f && git branch -vv | awk '/: gone]/{print \$1}' | xargs git branch -D"
